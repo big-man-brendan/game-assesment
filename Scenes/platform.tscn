@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://c6vxdsmlpwm4l"]
+
+[ext_resource type="Texture2D" uid="uid://buw36dkkkgcvg" path="res://Assets/Art/icon.svg" id="1_n5262"]
+[ext_resource type="PackedScene" uid="uid://bw8ndotudyhak" path="res://Scenes/charectir.tscn" id="2_mrs20"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
+size = Vector2(1180, 116)
+
+[node name="StaticBody2D" type="StaticBody2D" unique_id=1424389877]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1522041419]
+position = Vector2(578, 554)
+scale = Vector2(9.296875, 1)
+texture = ExtResource("1_n5262")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=528970832]
+position = Vector2(588, 555)
+shape = SubResource("RectangleShape2D_s8bxr")
+
+[node name="Charectir" parent="." unique_id=579283918 instance=ExtResource("2_mrs20")]
+position = Vector2(320, 274)
+
+[node name="Camera2D" type="Camera2D" parent="Charectir" unique_id=2101422075]
+zoom = Vector2(1.62, 1.62)
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
