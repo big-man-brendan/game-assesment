@@ -1,8 +1,9 @@
 extends CharacterBody2D
 
 #Varaibles
-#Fuck you
-const SPEED = 500.0
+
+
+const SPEED = 200.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
 @onready var dashtime = true
@@ -26,6 +27,22 @@ func _physics_process(delta: float) -> void:
 	
 	velocity.y = clamp(velocity.y,-1000,1000)
 	
+	
+	
+	if !velocity:
+		
+		$AnimatedSprite2D.play("Idle")
+	
+	if velocity.x > 0:
+		$AnimatedSprite2D.flip_h = false
+	
+	if velocity.x < 0:
+		$AnimatedSprite2D.flip_h = true
+	
+	if velocity.x !=0 and !dashing_on_floor:
+		$AnimatedSprite2D.play("Walk")
+	
+	
 	if not is_on_floor():
 		velocity += get_gravity()*2 * delta
 		
@@ -34,7 +51,9 @@ func _physics_process(delta: float) -> void:
 		reset()
 
 	var newdirection = Input.get_axis("ui_left", "ui_right")
-
+	
+	
+	
 	if direction:
 		velocity.x = direction * SPEED
 	else:
