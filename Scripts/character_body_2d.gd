@@ -1,7 +1,7 @@
 extends CharacterBody2D
 
 #Varaibles
-
+#Fuck you
 const SPEED = 500.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
