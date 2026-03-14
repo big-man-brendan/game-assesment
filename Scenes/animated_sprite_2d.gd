@@ -8,7 +8,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if animation == "Walk":
-		offset.y = 6
+	
+	#Fix the offset becaus some animmation frames are messed up
+	if animation == "Idle":
+		print("idle")
+		offset.x = 20
 	else:
-		offset.y = 0
+		offset.x = 0

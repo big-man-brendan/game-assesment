@@ -3,7 +3,7 @@ extends CharacterBody2D
 #Varaibles
 
 
-const SPEED = 200.0
+const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
 @onready var dashtime = true
@@ -32,6 +32,9 @@ func _physics_process(delta: float) -> void:
 	if !velocity:
 		
 		$AnimatedSprite2D.play("Idle")
+	
+	if dashing_on_floor:
+		$AnimatedSprite2D.play("Dash")
 	
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
