@@ -7,6 +7,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
 @onready var dashtime = true
+var attacking = false
 var dashing = false
 var dashing_on_floor = false
 signal dash
@@ -28,13 +29,14 @@ func _physics_process(delta: float) -> void:
 	velocity.y = clamp(velocity.y,-1000,1000)
 	
 	
+	if attacking:
+		pass
 	
-	if !velocity:
-		
+	elif !velocity:
 		$AnimatedSprite2D.play("Idle")
 	
-	if dashing_on_floor:
-		$AnimatedSprite2D.play("Dash")
+	elif velocity.x !=0 and !dashing_on_floor:
+		$AnimatedSprite2D.play("Walk")
 	
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = false
@@ -42,8 +44,7 @@ func _physics_process(delta: float) -> void:
 	if velocity.x < 0:
 		$AnimatedSprite2D.flip_h = true
 	
-	if velocity.x !=0 and !dashing_on_floor:
-		$AnimatedSprite2D.play("Walk")
+
 	
 	
 	if not is_on_floor():
@@ -100,6 +101,22 @@ func _physics_process(delta: float) -> void:
 			$DashOnFloorTimer.start()
 	
 	
+	if Input.is_action_pressed("Melee"):
+		
+	
+		
+		
+		$Damage_box.rotation = deg_to_rad(int($AnimatedSprite2D.flip_h))*180
+
+		$Damage_box.monitorable = true
+		
+		$AttackTimer.start()
+		attacking = true
+		
+		print("attacking")
+		$AnimatedSprite2D.play("Attack")
+	
+	
 	if is_on_floor() and !dashing_on_floor:
 		dashing = false
 	
@@ -136,3 +153,8 @@ func _on_hitbox_body_entered(body: ) -> void:
 
 func _on_dash_on_floor_timer_timeout() -> void:
 	dashing_on_floor = false
+
+
+func _on_attack_timer_timeout() -> void:
+	attacking = false
+	
