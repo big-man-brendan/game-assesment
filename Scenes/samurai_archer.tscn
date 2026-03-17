@@ -1,0 +1,103 @@
+[gd_scene format=3 uid="uid://bfaadrsem0sbg"]
+
+[ext_resource type="Script" uid="uid://ccj8v4jeqirqp" path="res://Scripts/samurai_archer.gd" id="1_jrs1t"]
+[ext_resource type="Texture2D" uid="uid://c25gbr3mb0u5c" path="res://Assets/Art/Samurai_assets/Samurai_Archer/Idle.png" id="1_s5sxu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_th0xg"]
+size = Vector2(40, 72)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jrs1t"]
+radius = 639.0125
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrs1t"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwydd"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5i8wk"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5a6j3"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ud6x"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvffh"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8a6p8"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrmff"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(896, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m2jro"]
+atlas = ExtResource("1_s5sxu")
+region = Rect2(1024, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_df8j3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrs1t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mwydd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5i8wk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5a6j3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ud6x")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvffh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8a6p8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrmff")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m2jro")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="SamuraiArcher" type="CharacterBody2D" unique_id=163221639]
+script = ExtResource("1_jrs1t")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=840323436]
+
+[node name="HitBox" type="CollisionShape2D" parent="Area2D" unique_id=1768810834]
+position = Vector2(1, 28)
+shape = SubResource("RectangleShape2D_th0xg")
+
+[node name="DetectBox" type="CollisionShape2D" parent="Area2D" unique_id=952691992]
+visible = false
+modulate = Color(0.83137256, 0, 1, 1)
+shape = SubResource("CircleShape2D_jrs1t")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=816162436]
+sprite_frames = SubResource("SpriteFrames_df8j3")
+animation = &"Idle"
+frame = 6
+frame_progress = 0.55340606
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

@@ -14,6 +14,7 @@ func _process(delta: float) -> void:
 
 
 func _on_area_entered(area: Area2D) -> void:
+	
 	print("Hit")
 	print(get_overlapping_areas())
 	scale = Vector2(0.5,0.5)

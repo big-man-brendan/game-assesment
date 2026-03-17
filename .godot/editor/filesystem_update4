@@ -3,3 +3,5 @@ res://Scripts/test_dummy.gd
 res://Scripts/character_body_2d.gd
 res://Scenes/charectir.tscn
 res://Scenes/platform.tscn
+res://Scenes/samurai_archer.tscn
+res://Scripts/samurai_archer.gd
