@@ -10,10 +10,12 @@ const JUMP_VELOCITY = -500.0
 var attacking = false
 var dashing = false
 var dashing_on_floor = false
+
 signal dash
 
 func _ready() -> void:
 	print("ready")
+	$Damage_box.monitorable = false
 	
 	
 func reset():

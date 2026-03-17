@@ -18,4 +18,10 @@ texture = ExtResource("1_ftpm7")
 position = Vector2(2, 0.5)
 shape = SubResource("RectangleShape2D_m7ntk")
 
+[node name="HitTimer" type="Timer" parent="." unique_id=2091481262]
+wait_time = 0.5
+one_shot = true
+
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]
+[connection signal="timeout" from="HitTimer" to="." method="_on_hit_timer_timeout"]
