@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://cxc8jhsb0vpqe"]
+
+[ext_resource type="Texture2D" uid="uid://buw36dkkkgcvg" path="res://Assets/Art/icon.svg" id="1_ftpm7"]
+[ext_resource type="Script" uid="uid://vpykov27mnv" path="res://Scripts/test_dummy.gd" id="1_m7ntk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m7ntk"]
+size = Vector2(130, 119)
+
+[node name="Test_dummy" type="Area2D" unique_id=654696611]
+collision_layer = 2
+collision_mask = 2
+script = ExtResource("1_m7ntk")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=825116620]
+texture = ExtResource("1_ftpm7")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1371299403]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_m7ntk")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

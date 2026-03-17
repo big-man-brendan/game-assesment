@@ -32,6 +32,12 @@ func _physics_process(delta: float) -> void:
 	if attacking:
 		pass
 	
+	elif !is_on_floor():
+		if $AnimatedSprite2D.frame != 3:
+			
+			$AnimatedSprite2D.play("Jump")
+		else:
+			$AnimatedSprite2D.pause()
 	elif !velocity:
 		$AnimatedSprite2D.play("Idle")
 	
@@ -101,7 +107,7 @@ func _physics_process(delta: float) -> void:
 			$DashOnFloorTimer.start()
 	
 	
-	if Input.is_action_pressed("Melee"):
+	if Input.is_action_just_pressed("Melee"):
 		
 	
 		
@@ -117,6 +123,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.play("Attack")
 	
 	
+	
 	if is_on_floor() and !dashing_on_floor:
 		dashing = false
 	
@@ -127,14 +134,8 @@ func _physics_process(delta: float) -> void:
 	
 	move_and_slide()
 	
-
-	
-	
-	
 	#print(onladder)
-	
-
-	 # Replace with function body.
+	# Replace with function body.
 
 
 func _on_dash_timer_timeout() -> void:
@@ -157,4 +158,4 @@ func _on_dash_on_floor_timer_timeout() -> void:
 
 func _on_attack_timer_timeout() -> void:
 	attacking = false
-	
+	$Damage_box.monitorable = false

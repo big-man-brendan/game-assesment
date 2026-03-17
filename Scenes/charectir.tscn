@@ -5,6 +5,8 @@
 [ext_resource type="Texture2D" uid="uid://d2dg83tyde8vk" path="res://Assets/Art/Samurai/Attack_2.png" id="2_q81k0"]
 [ext_resource type="Texture2D" uid="uid://bdrcxpiot6oeu" path="res://Assets/Art/Samurai/Walk.png" id="3_q81k0"]
 [ext_resource type="Script" uid="uid://b144w7s6acbsw" path="res://Scenes/animated_sprite_2d.gd" id="3_qi374"]
+[ext_resource type="Texture2D" uid="uid://co0id058eseb5" path="res://Assets/Art/Samurai/Jump.png" id="4_op0uk"]
+[ext_resource type="Texture2D" uid="uid://bpsg3sjbmk71b" path="res://Assets/Art/Samurai/Run.png" id="5_cbtoo"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16co"]
 size = Vector2(21, 60)
@@ -52,6 +54,54 @@ region = Rect2(640, 896, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_xr1dg"]
 atlas = ExtResource("2_42rvy")
 region = Rect2(768, 896, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npae7"]
+atlas = ExtResource("4_op0uk")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0dg1f"]
+atlas = ExtResource("4_op0uk")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v3keq"]
+atlas = ExtResource("4_op0uk")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i74qw"]
+atlas = ExtResource("4_op0uk")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w83i4"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bjoe0"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o2xe8"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rd56k"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_00csi"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sk30c"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(640, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4h24m"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(768, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n7d2t"]
+atlas = ExtResource("5_cbtoo")
+region = Rect2(896, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8kuid"]
 atlas = ExtResource("3_q81k0")
@@ -109,7 +159,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"Attack",
-"speed": 18.0
+"speed": 31.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -132,6 +182,52 @@ animations = [{
 }],
 "loop": true,
 "name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npae7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0dg1f")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v3keq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i74qw")
+}],
+"loop": false,
+"name": &"Jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w83i4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bjoe0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o2xe8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rd56k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_00csi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sk30c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4h24m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n7d2t")
+}],
+"loop": true,
+"name": &"Run",
 "speed": 5.0
 }, {
 "frames": [{
@@ -168,7 +264,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42rvy"]
-size = Vector2(19, 52)
+size = Vector2(39.5, 52)
 
 [node name="Charectir" type="CharacterBody2D" unique_id=579283918]
 script = ExtResource("1_gmkxy")
@@ -186,22 +282,24 @@ wait_time = 0.3
 one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1143659056]
-wait_time = 0.5
+wait_time = 0.2
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1982043459]
 position = Vector2(2, -7)
 sprite_frames = SubResource("SpriteFrames_uuou3")
-animation = &"Attack"
-frame = 4
+animation = &"Jump"
+frame = 3
 frame_progress = 1.0
 script = ExtResource("3_qi374")
 
 [node name="Damage_box" type="Area2D" parent="." unique_id=1381531231]
 position = Vector2(0, 25)
+collision_layer = 2
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_box" unique_id=538499711]
-position = Vector2(29, 0)
+position = Vector2(39.25, 0)
 shape = SubResource("RectangleShape2D_42rvy")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
