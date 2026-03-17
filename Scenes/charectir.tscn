@@ -282,7 +282,7 @@ wait_time = 0.3
 one_shot = true
 
 [node name="AttackTimer" type="Timer" parent="." unique_id=1143659056]
-wait_time = 0.2
+wait_time = 0.3
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1982043459]

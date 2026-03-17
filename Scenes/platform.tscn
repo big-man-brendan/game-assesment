@@ -27,4 +27,4 @@ position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 
 [node name="Test_dummy" parent="." unique_id=654696611 instance=ExtResource("3_mrs20")]
-position = Vector2(531, 377)
+position = Vector2(543, 425)

@@ -10,12 +10,14 @@ const JUMP_VELOCITY = -500.0
 var attacking = false
 var dashing = false
 var dashing_on_floor = false
+var damage_og_pos = Vector2(0,25) 
 
 signal dash
 
 func _ready() -> void:
+	
 	print("ready")
-	$Damage_box.monitorable = false
+	$Damage_box.position.x = 100000
 	
 	
 func reset():
@@ -111,12 +113,11 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("Melee"):
 		
-	
-		
+		$Damage_box.position = damage_og_pos
 		
 		$Damage_box.rotation = deg_to_rad(int($AnimatedSprite2D.flip_h))*180
-
-		$Damage_box.monitorable = true
+		
+		
 		
 		$AttackTimer.start()
 		attacking = true
@@ -159,5 +160,11 @@ func _on_dash_on_floor_timer_timeout() -> void:
 
 
 func _on_attack_timer_timeout() -> void:
+	
 	attacking = false
-	$Damage_box.monitorable = false
+	
+	$Damage_box.position.x = 1000000
+	
+	await get_tree().physics_frame
+
+	print("stopped attacking")
