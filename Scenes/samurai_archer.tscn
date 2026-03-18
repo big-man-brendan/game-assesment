@@ -2,12 +2,11 @@
 
 [ext_resource type="Script" uid="uid://ccj8v4jeqirqp" path="res://Scripts/samurai_archer.gd" id="1_jrs1t"]
 [ext_resource type="Texture2D" uid="uid://c25gbr3mb0u5c" path="res://Assets/Art/Samurai_assets/Samurai_Archer/Idle.png" id="1_s5sxu"]
+[ext_resource type="Script" uid="uid://db2vodl5sxle3" path="res://Scripts/arrow.gd" id="3_5i8wk"]
+[ext_resource type="Texture2D" uid="uid://blg2n4jxd56hy" path="res://Assets/Art/Samurai_assets/Samurai_Archer/Arrow.png" id="3_mwydd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s5sxu"]
 size = Vector2(40, 72)
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_jrs1t"]
-radius = 639.0125
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jrs1t"]
 atlas = ExtResource("1_s5sxu")
@@ -80,20 +79,35 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5i8wk"]
+size = Vector2(50, 5)
+
 [node name="Samurai Archer" type="Area2D" unique_id=2048810974]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_jrs1t")
 
 [node name="HitBox" type="CollisionShape2D" parent="." unique_id=1624374806]
 position = Vector2(1, 28)
 shape = SubResource("RectangleShape2D_s5sxu")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=1303332454]
-
-[node name="DetectBox" type="CollisionShape2D" parent="Area2D" unique_id=947586505]
-visible = false
-modulate = Color(0.83137256, 0, 1, 1)
-shape = SubResource("CircleShape2D_jrs1t")
-
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2055933151]
 sprite_frames = SubResource("SpriteFrames_mwydd")
 animation = &"Idle"
+
+[node name="Arrow" type="Area2D" parent="." unique_id=250869897]
+collision_layer = 17
+collision_mask = 17
+script = ExtResource("3_5i8wk")
+
+[node name="Sprite2D" type="Sprite2D" parent="Arrow" unique_id=987374952]
+texture = ExtResource("3_mwydd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Arrow" unique_id=204137406]
+position = Vector2(2, 0.5)
+shape = SubResource("RectangleShape2D_5i8wk")
+
+[node name="TimeOutTimer" type="Timer" parent="Arrow" unique_id=626107035]
+
+[connection signal="shoot" from="." to="Arrow" method="_on_samurai_archer_shoot"]
+[connection signal="area_entered" from="Arrow" to="Arrow" method="_on_area_entered"]

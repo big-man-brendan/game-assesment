@@ -267,6 +267,8 @@ animations = [{
 size = Vector2(39.5, 52)
 
 [node name="Charectir" type="CharacterBody2D" unique_id=579283918]
+collision_layer = 16
+collision_mask = 17
 script = ExtResource("1_gmkxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842387509]

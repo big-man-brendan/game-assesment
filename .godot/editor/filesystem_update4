@@ -1,3 +1,6 @@
 res://Scenes/test_dummy.tscn
 res://Scripts/samurai_archer.gd
 res://Scenes/samurai_archer.tscn
+res://Scenes/charectir.tscn
+res://Scenes/platform.tscn
+res://Scripts/arrow.gd
