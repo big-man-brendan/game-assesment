@@ -3,7 +3,7 @@
 [ext_resource type="Script" uid="uid://ccj8v4jeqirqp" path="res://Scripts/samurai_archer.gd" id="1_jrs1t"]
 [ext_resource type="Texture2D" uid="uid://c25gbr3mb0u5c" path="res://Assets/Art/Samurai_assets/Samurai_Archer/Idle.png" id="1_s5sxu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_th0xg"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s5sxu"]
 size = Vector2(40, 72)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jrs1t"]
@@ -45,7 +45,7 @@ region = Rect2(896, 0, 128, 128)
 atlas = ExtResource("1_s5sxu")
 region = Rect2(1024, 0, 128, 128)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_df8j3"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_mwydd"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -80,24 +80,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="SamuraiArcher" type="CharacterBody2D" unique_id=163221639]
+[node name="Samurai Archer" type="Area2D" unique_id=2048810974]
 script = ExtResource("1_jrs1t")
 
-[node name="Area2D" type="Area2D" parent="." unique_id=840323436]
-
-[node name="HitBox" type="CollisionShape2D" parent="Area2D" unique_id=1768810834]
+[node name="HitBox" type="CollisionShape2D" parent="." unique_id=1624374806]
 position = Vector2(1, 28)
-shape = SubResource("RectangleShape2D_th0xg")
+shape = SubResource("RectangleShape2D_s5sxu")
 
-[node name="DetectBox" type="CollisionShape2D" parent="Area2D" unique_id=952691992]
+[node name="Area2D" type="Area2D" parent="." unique_id=1303332454]
+
+[node name="DetectBox" type="CollisionShape2D" parent="Area2D" unique_id=947586505]
 visible = false
 modulate = Color(0.83137256, 0, 1, 1)
 shape = SubResource("CircleShape2D_jrs1t")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=816162436]
-sprite_frames = SubResource("SpriteFrames_df8j3")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2055933151]
+sprite_frames = SubResource("SpriteFrames_mwydd")
 animation = &"Idle"
-frame = 6
-frame_progress = 0.55340606
-
-[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

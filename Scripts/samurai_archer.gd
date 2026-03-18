@@ -1,6 +1,6 @@
-extends CharacterBody2D
+extends Area2D
 
-signal in_area
+signal in_area()
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -9,11 +9,9 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
-	
-	
-
-
+	var target = $"../Charectir".position
+	print(target)
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	
-	var target = emit_signal("in_area")
+	var target = $/root/StaticBody2d/Charectir.position
+	
