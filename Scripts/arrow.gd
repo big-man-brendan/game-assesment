@@ -11,12 +11,17 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	
 	if shooting:
 		position += direction * speed * delta
-		
-	
 
-func _on_samurai_archer_shoot() -> void:
+
+	if Input.is_action_just_pressed("ui_accept"):
+		shoot()
+
+
+func shoot() -> void:
+	
 	position = Vector2(0,0)
 	direction = ($"../../Charectir".global_position - global_position).normalized()
 	rotation = direction.angle()
@@ -27,4 +32,5 @@ func _on_samurai_archer_shoot() -> void:
 func _on_area_entered(area: Area2D) -> void:
 	
 	shooting = false
+	print("Area_entered")
 	position.x = 100000

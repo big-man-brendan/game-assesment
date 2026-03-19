@@ -266,9 +266,11 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_42rvy"]
 size = Vector2(39.5, 52)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cbtoo"]
+size = Vector2(31, 64)
+
 [node name="Charectir" type="CharacterBody2D" unique_id=579283918]
 collision_layer = 16
-collision_mask = 17
 script = ExtResource("1_gmkxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842387509]
@@ -304,6 +306,17 @@ collision_mask = 2
 position = Vector2(39.25, 0)
 shape = SubResource("RectangleShape2D_42rvy")
 
+[node name="Hurt_box" type="Area2D" parent="." unique_id=40666505]
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=417244682]
+modulate = Color(1, 0.35708958, 0.5696613, 1)
+self_modulate = Color(0.9843137, 0, 0, 1)
+position = Vector2(1, 23)
+shape = SubResource("RectangleShape2D_cbtoo")
+
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]
 [connection signal="timeout" from="DashOnFloorTimer" to="." method="_on_dash_on_floor_timer_timeout"]
 [connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
+[connection signal="area_entered" from="Hurt_box" to="." method="_on_hurt_box_area_entered"]

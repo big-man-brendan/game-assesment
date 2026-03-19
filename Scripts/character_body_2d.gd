@@ -168,3 +168,9 @@ func _on_attack_timer_timeout() -> void:
 	await get_tree().physics_frame
 
 	print("stopped attacking")
+	
+
+
+func _on_hurt_box_area_entered(area: Area2D) -> void:
+	print("HIT HIT")
+	
