@@ -270,7 +270,7 @@ size = Vector2(39.5, 52)
 size = Vector2(31, 64)
 
 [node name="Charectir" type="CharacterBody2D" unique_id=579283918]
-collision_layer = 16
+collision_layer = 0
 script = ExtResource("1_gmkxy")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1842387509]
@@ -300,7 +300,7 @@ script = ExtResource("3_qi374")
 [node name="Damage_box" type="Area2D" parent="." unique_id=1381531231]
 position = Vector2(0, 25)
 collision_layer = 2
-collision_mask = 2
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Damage_box" unique_id=538499711]
 position = Vector2(39.25, 0)
@@ -308,7 +308,7 @@ shape = SubResource("RectangleShape2D_42rvy")
 
 [node name="Hurt_box" type="Area2D" parent="." unique_id=40666505]
 collision_layer = 16
-collision_mask = 16
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hurt_box" unique_id=417244682]
 modulate = Color(1, 0.35708958, 0.5696613, 1)

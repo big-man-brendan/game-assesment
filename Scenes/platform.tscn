@@ -8,6 +8,9 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8bxr"]
 size = Vector2(1180, 116)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mlqre"]
+size = Vector2(70, 103)
+
 [node name="StaticBody2D" type="StaticBody2D" unique_id=1424389877]
 
 [node name="Sprite2D" type="Sprite2D" parent="." unique_id=1522041419]
@@ -32,3 +35,15 @@ position = Vector2(543, 425)
 
 [node name="SamuraiArcher" parent="." unique_id=163221639 instance=ExtResource("4_mlqre")]
 position = Vector2(157, 343)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=705148240]
+position = Vector2(359, 425)
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1585837396]
+position = Vector2(-20.000008, 11)
+scale = Vector2(0.5546876, 0.84375)
+texture = ExtResource("1_n5262")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=475202561]
+position = Vector2(-20, 11.5)
+shape = SubResource("RectangleShape2D_mlqre")

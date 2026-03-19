@@ -26,11 +26,20 @@ func shoot() -> void:
 	direction = ($"../../Charectir".global_position - global_position).normalized()
 	rotation = direction.angle()
 	shooting = true
-	
+
+
 
 
 func _on_area_entered(area: Area2D) -> void:
 	
+	await get_tree().physics_frame
 	shooting = false
 	print("Area_entered")
 	position.x = 100000
+
+#
+#func _on_body_entered(body: Node2D) -> void:
+	#
+	#shooting = false
+	#print("Area_entered")
+	#position.x = 100000

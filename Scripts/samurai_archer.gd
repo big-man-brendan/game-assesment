@@ -30,8 +30,8 @@ func _process(delta: float) -> void:
 	if position.distance_to($"../Charectir".position) < 500:
 		pass
 		
-		if Input.is_action_just_pressed("ui_accept"):
-			shoot()
+		#if Input.is_action_just_pressed("ui_accept"):
+			#shoot()
 	
 		if position.distance_to($"../Charectir".position) < 200:
 			pass
@@ -40,20 +40,20 @@ func _process(delta: float) -> void:
 		
 	move_and_slide()
 
-func shoot():
-	
-	$Arrow.position = Vector2(0,0)
-	direction = ($"../Charectir".global_position - global_position).normalized()
-	$Arrow.rotation = direction.angle()
-	shooting = true
+#func shoot():
+	#
+	#$Arrow.position = Vector2(0,0)
+	#direction = ($"../Charectir".global_position - global_position).normalized()
+	#$Arrow.rotation = direction.angle()
+	#shooting = true
 
 
-func _on_samurai_archer_shoot() -> void:
-	position = Vector2(0,0)
-	direction = ($"../../Charectir".global_position - global_position).normalized()
-	rotation = direction.angle()
-	shooting = true
-	
+#func _on_samurai_archer_shoot() -> void:
+	#position = Vector2(0,0)
+	#direction = ($"../../Charectir".global_position - global_position).normalized()
+	#rotation = direction.angle()
+	#shooting = true
+	#
 
 
 func _on_area_entered(area: Area2D) -> void:

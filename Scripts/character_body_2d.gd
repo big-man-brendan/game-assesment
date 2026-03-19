@@ -172,5 +172,6 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
+	
 	print("HIT HIT")
 	

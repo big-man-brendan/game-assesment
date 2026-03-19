@@ -79,6 +79,7 @@ animations = [{
 }]
 
 [node name="SamuraiArcher" type="CharacterBody2D" unique_id=1149255365]
+collision_layer = 2
 script = ExtResource("1_jrs1t")
 
 [node name="HitBox" type="CollisionShape2D" parent="." unique_id=1377003737]
@@ -90,4 +91,4 @@ sprite_frames = SubResource("SpriteFrames_5i8wk")
 animation = &"Idle"
 
 [node name="Arrow" parent="." unique_id=1580336294 instance=ExtResource("3_mwydd")]
-collision_mask = 253
+collision_mask = 17
