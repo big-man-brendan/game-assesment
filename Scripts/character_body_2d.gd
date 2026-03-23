@@ -11,6 +11,7 @@ var attacking = false
 var dashing = false
 var dashing_on_floor = false
 var damage_og_pos = Vector2(0,25) 
+var on_ladder = false
 
 signal dash
 
@@ -175,3 +176,11 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 	
 	print("HIT HIT")
 	
+
+
+func _on_ladder_detector_body_entered(body: Node2D) -> void:
+	on_ladder = true
+
+
+func _on_ladder_detector_body_exited(body: Node2D) -> void:
+	on_ladder = false
