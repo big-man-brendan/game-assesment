@@ -10,7 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	
+	print(direction)
 	
 	if shooting:
 		position += direction * speed * delta
@@ -21,15 +21,15 @@ func _process(delta: float) -> void:
 
 
 func shoot() -> void:
-	
+		
 	position = Vector2(0,0)
 	direction = ($"../../Charectir".global_position - global_position).normalized()
 	rotation = direction.angle()
 	shooting = true
-
-
-
-
+	
+	
+	
+	
 func _on_area_entered(area: Area2D) -> void:
 	
 	await get_tree().physics_frame

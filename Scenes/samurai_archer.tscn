@@ -91,4 +91,3 @@ sprite_frames = SubResource("SpriteFrames_5i8wk")
 animation = &"Idle"
 
 [node name="Arrow" parent="." unique_id=1580336294 instance=ExtResource("3_mwydd")]
-collision_mask = 17

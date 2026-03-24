@@ -1,4 +1,5 @@
-res://Scenes/map.tscn
-res://Scenes/main.tscn
-res://Scenes/charectir.tscn
 res://Scripts/character_body_2d.gd
+res://Scenes/samurai_archer.tscn
+res://Scripts/arrow.gd
+res://Scenes/main.tscn
+res://Scenes/background.tscn

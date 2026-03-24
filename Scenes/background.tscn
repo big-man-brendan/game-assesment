@@ -1,0 +1,38 @@
+[gd_scene format=3 uid="uid://dywunxttwmy3f"]
+
+[ext_resource type="Texture2D" uid="uid://me0ivn0yyrhh" path="res://Assets/Art/Stuff/warped city files/warped city files/Assets/ENVIRONMENT/background/near-buildings-bg.png" id="1_sn1xx"]
+[ext_resource type="Texture2D" uid="uid://cqc2ke8vco5mt" path="res://Assets/Art/Stuff/warped city files/warped city files/Assets/ENVIRONMENT/background/skyline-a.png" id="2_pojwb"]
+
+[node name="Node2D" type="Node2D" unique_id=1461438796]
+visible = false
+
+[node name="Parallax2D" type="Parallax2D" parent="." unique_id=385572965]
+scroll_scale = Vector2(0.535, 0.535)
+repeat_size = Vector2(127.48, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=880387033]
+position = Vector2(48, 91.99999)
+scale = Vector2(1.9385544, 1.9385544)
+texture = ExtResource("2_pojwb")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="Parallax2D" unique_id=1809338198]
+visible = false
+
+[node name="ColorRect" type="ColorRect" parent="Parallax2D/CanvasLayer" unique_id=1183760581]
+offset_left = 1583.0
+offset_top = -418.0
+offset_right = 1623.0
+offset_bottom = -320.9449
+scale = Vector2(-77.215836, 3.1548436)
+color = Color(0, 0, 0.23529412, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1480424046]
+scroll_scale = Vector2(0.755, 0.8)
+repeat_size = Vector2(500, 0)
+repeat_times = 20
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1610747632]
+position = Vector2(9, 130)
+texture = ExtResource("1_sn1xx")

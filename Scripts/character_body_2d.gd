@@ -58,13 +58,27 @@ func _physics_process(delta: float) -> void:
 
 	
 	
-	if not is_on_floor():
+	if not is_on_floor() and !on_ladder:
 		velocity += get_gravity()*2 * delta
+	
+	
+	if on_ladder:
 		
+		if Input.is_action_pressed("ui_up"):
+			velocity.y = -200
+		
+		elif Input.is_action_pressed("ui_down"):
+			
+			velocity.y = 200
+		
+		else:
+			velocity.y = 0
 	
 	if position.y > 1000:
 		reset()
-
+	
+	
+	
 	var newdirection = Input.get_axis("ui_left", "ui_right")
 	
 	
@@ -75,7 +89,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 	
 	
-	if Input.is_action_pressed("ui_up") and is_on_floor():
+	if Input.is_action_pressed("ui_up") and is_on_floor() and !on_ladder:
 		velocity.y -= 700
 	
 	
@@ -131,6 +145,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor() and !dashing_on_floor:
 		dashing = false
 	
+	
+	
 	if dashing or dashing_on_floor:
 		direction = lerpf(direction,round(newdirection),0.1)
 	else:
@@ -180,7 +196,9 @@ func _on_hurt_box_area_entered(area: Area2D) -> void:
 
 func _on_ladder_detector_body_entered(body: Node2D) -> void:
 	on_ladder = true
-
+	print("On ladder")
+	velocity.y = 0
 
 func _on_ladder_detector_body_exited(body: Node2D) -> void:
 	on_ladder = false
+	print("Off ladder")
