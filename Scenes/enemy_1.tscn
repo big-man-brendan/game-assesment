@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ddbe32qfjl7jx"]
+
+[ext_resource type="Script" uid="uid://bnxxxbiet6t1y" path="res://Scenes/enemy_1.gd" id="1_0a874"]
+[ext_resource type="Texture2D" uid="uid://db5rlhmnk11h0" path="res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/idle.png" id="1_jwqgc"]
+[ext_resource type="Texture2D" uid="uid://bygc1l5xtqlt" path="res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/shoot.png" id="3_lssre"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a874"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(0, 0, 71, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lssre"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(71, 0, 71, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wlnc2"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(142, 0, 71, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hmo6u"]
+atlas = ExtResource("1_jwqgc")
+region = Rect2(213, 0, 71, 67)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arec4"]
+atlas = ExtResource("3_lssre")
+region = Rect2(0, 0, 71, 67)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_arec4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a874")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lssre")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wlnc2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hmo6u")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arec4")
+}],
+"loop": true,
+"name": &"Shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_v73nf"]
+size = Vector2(14, 43)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ya6xy"]
+size = Vector2(14, 43)
+
+[node name="Enemy1" type="CharacterBody2D" unique_id=1772071157]
+script = ExtResource("1_0a874")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=662598574]
+sprite_frames = SubResource("SpriteFrames_arec4")
+animation = &"Shoot"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1883245402]
+position = Vector2(2, 11.5)
+shape = SubResource("RectangleShape2D_v73nf")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1026003614]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=790832376]
+modulate = Color(1, 0, 1, 1)
+position = Vector2(2, 11.5)
+shape = SubResource("RectangleShape2D_ya6xy")

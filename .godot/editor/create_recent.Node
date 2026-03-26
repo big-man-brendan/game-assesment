@@ -1,13 +1,13 @@
+CollisionShape2D
+Area2D
+AnimatedSprite2D
+CharacterBody2D
 ColorRect
 CanvasLayer
 Parallax2D
 Sprite2D
-CollisionShape2D
-Area2D
 Camera2D
 Node2D
 TileMap
 StaticBody2D
-CharacterBody2D
 Timer
-AnimatedSprite2D

@@ -1,6 +1,4 @@
-res://Scenes/main.tscn
 res://Scenes/map.tscn
-res://Scripts/character_body_2d.gd
-res://Scenes/charectir.tscn
-res://Scenes/test_dummy.tscn
-res://Scripts/test_dummy.gd
+res://Scenes/main.tscn
+res://Scenes/enemy_1.tscn
+res://Scenes/enemy_1.gd
