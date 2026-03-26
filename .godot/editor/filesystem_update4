@@ -1,5 +1,6 @@
-res://Scripts/character_body_2d.gd
-res://Scenes/samurai_archer.tscn
-res://Scripts/arrow.gd
 res://Scenes/main.tscn
-res://Scenes/background.tscn
+res://Scenes/map.tscn
+res://Scripts/character_body_2d.gd
+res://Scenes/charectir.tscn
+res://Scenes/test_dummy.tscn
+res://Scripts/test_dummy.gd

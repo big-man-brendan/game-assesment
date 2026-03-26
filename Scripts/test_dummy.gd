@@ -26,10 +26,5 @@ func _on_hit_timer_timeout() -> void:
 	
 	print(get_overlapping_areas())
 
-	reset_physics_interpolation()
-	
-
-	monitoring = false
-	monitoring = true
 	scale = Vector2(1,1)
 	

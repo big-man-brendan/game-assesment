@@ -34,8 +34,12 @@ func _physics_process(delta: float) -> void:
 	velocity.y = clamp(velocity.y,-1000,1000)
 	
 	
+	
 	if attacking:
 		pass
+	
+	elif on_ladder:
+		$AnimatedSprite2D.play("Idle")
 	
 	elif !is_on_floor():
 		if $AnimatedSprite2D.frame != 3:
@@ -138,7 +142,10 @@ func _physics_process(delta: float) -> void:
 		attacking = true
 		
 		print("attacking")
-		$AnimatedSprite2D.play("Attack")
+		
+		var random_attack_animation = ["Attack1","Attack2","Attack3"].pick_random()
+		
+		$AnimatedSprite2D.play(random_attack_animation)
 	
 	
 	
@@ -185,7 +192,7 @@ func _on_attack_timer_timeout() -> void:
 	await get_tree().physics_frame
 
 	print("stopped attacking")
-	
+
 
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
