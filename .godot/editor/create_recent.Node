@@ -1,13 +1,13 @@
+Timer
 CollisionShape2D
+Sprite2D
 Area2D
 AnimatedSprite2D
 CharacterBody2D
 ColorRect
 CanvasLayer
 Parallax2D
-Sprite2D
 Camera2D
 Node2D
 TileMap
 StaticBody2D
-Timer
