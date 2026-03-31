@@ -12,6 +12,7 @@ var dashing = false
 var dashing_on_floor = false
 var damage_og_pos = Vector2(0,25) 
 var on_ladder = false
+@onready var dead = false
 
 signal dash
 
@@ -22,9 +23,9 @@ func _ready() -> void:
 	
 	
 func reset():
-	position.y = -100
-	position.x = 0
-	velocity = Vector2(0,-20)
+	dead = true
+	
+	$AnimatedSprite2D.play("Death")
 
 
 
@@ -34,8 +35,17 @@ func _physics_process(delta: float) -> void:
 	velocity.y = clamp(velocity.y,-1000,1000)
 	
 	
-	
-	if attacking:
+	if dead:
+		if $AnimatedSprite2D.frame == 5:
+			
+			$AnimatedSprite2D.play("Idle")
+			position.y = -100
+			position.x = 0
+			velocity = Vector2(0,-20)
+			dead = false
+
+		
+	elif attacking:
 		pass
 	
 	elif on_ladder:
@@ -81,10 +91,12 @@ func _physics_process(delta: float) -> void:
 	if position.y > 1000:
 		reset()
 	
+	var newdirection = 0
 	
-	
-	var newdirection = Input.get_axis("ui_left", "ui_right")
-	
+	if !dead:
+		
+		newdirection = Input.get_axis("ui_left", "ui_right")
+
 	
 	
 	if direction:
@@ -209,3 +221,7 @@ func _on_ladder_detector_body_entered(body: Node2D) -> void:
 func _on_ladder_detector_body_exited(body: Node2D) -> void:
 	on_ladder = false
 	print("Off ladder")
+
+
+func _on_bullet_1_hit() -> void:
+	reset()

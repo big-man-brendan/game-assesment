@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://co0id058eseb5" path="res://Assets/Art/Samurai/Jump.png" id="4_op0uk"]
 [ext_resource type="Texture2D" uid="uid://bh28xi2hir5nj" path="res://Assets/Art/Samurai/Attack_3.png" id="4_xr1dg"]
 [ext_resource type="Texture2D" uid="uid://bpsg3sjbmk71b" path="res://Assets/Art/Samurai/Run.png" id="5_cbtoo"]
+[ext_resource type="Texture2D" uid="uid://dyx5ioq0kaafl" path="res://Assets/Art/Samurai/Dead.png" id="5_xr1dg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_b16co"]
 size = Vector2(21, 60)
@@ -60,6 +61,30 @@ region = Rect2(256, 0, 128, 128)
 [sub_resource type="AtlasTexture" id="AtlasTexture_pnumq"]
 atlas = ExtResource("4_xr1dg")
 region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wfwa"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ylpp4"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hv6tl"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k312n"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(384, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvdyf"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(512, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qh3n5"]
+atlas = ExtResource("5_xr1dg")
+region = Rect2(640, 0, 128, 128)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_q81k0"]
 atlas = ExtResource("2_42rvy")
@@ -204,7 +229,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_kplra")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack2",
 "speed": 15.0
 }, {
@@ -218,9 +243,32 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_pnumq")
 }],
-"loop": true,
+"loop": false,
 "name": &"Attack3",
 "speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wfwa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ylpp4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hv6tl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k312n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gvdyf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qh3n5")
+}],
+"loop": false,
+"name": &"Death",
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -354,9 +402,9 @@ wait_time = 0.3
 one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1982043459]
-position = Vector2(2, -7)
+position = Vector2(6, -9)
 sprite_frames = SubResource("SpriteFrames_uuou3")
-animation = &"Attack3"
+animation = &"Run"
 script = ExtResource("3_qi374")
 
 [node name="Damage_box" type="Area2D" parent="." unique_id=1381531231]

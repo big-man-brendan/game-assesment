@@ -5,6 +5,8 @@ const SPEED = 150.0
 const JUMP_VELOCITY = -400.0
 var is_flipped = false
 var shot = false
+@onready var start_pos = position
+
 
 signal shoot()
 
@@ -50,7 +52,8 @@ func _physics_process(delta: float) -> void:
 	if $"../Charectir".global_position.distance_to(global_position) < 280:
 		
 		
-		$AnimatedSprite2D.play("Shoot")
+		$AnimatedSprite2D.play("Walk")
+		
 		if shot == false:
 			print("Shoot")
 			emit_signal("shoot")
@@ -73,3 +76,16 @@ func _physics_process(delta: float) -> void:
 
 func _on_shottimer_timeout() -> void:
 	shot = false
+
+
+func _on_bullet_1_hit() -> void:
+	position = start_pos
+
+
+func _on_hurtbox_area_entered(area: Area2D) -> void:
+	
+	$AnimatedSprite2D.play("dead")
+	
+	await  get_tree().create_timer(1).timeout
+	
+	position.x = 100000

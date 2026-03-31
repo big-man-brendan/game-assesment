@@ -2,6 +2,7 @@ extends Area2D
 
 var hits = 0
 var shooting_dir = 0
+signal hit()
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -22,6 +23,9 @@ func _on_area_entered(area: Area2D) -> void:
 	
 	if hits == 2:
 		print("Hit")
+		
+		emit_signal("hit")
+		
 		hits = 0
 		position.x = 100000
 		

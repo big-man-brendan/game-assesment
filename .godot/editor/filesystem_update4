@@ -1,4 +1,6 @@
-res://Scenes/enemy_1.tscn
-res://Scripts/enemy_1.gd
-res://Scripts/bullet_1.gd
+res://Scripts/character_body_2d.gd
 res://Scenes/main.tscn
+res://Scripts/bullet_1.gd
+res://Scripts/enemy_1.gd
+res://Scenes/charectir.tscn
+res://Scenes/enemy_1.tscn
