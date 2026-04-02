@@ -1,5 +1,5 @@
 63f7b34db8d8cdea90c76aacccf841ec
-::res://::1774996616
+::res://::1775093208
 ::res://Assets/::1773690966
 ::res://Assets/Art/::1774295687
 icon.svg::CompressedTexture2D::3837369475937627624::1773690966::1774295686::1::::<><><>0<>0<>556c4f8daac45bb4cc320e9bd0ca10a4<>res://.godot/imported/icon.svg-18c1c52c6ac344ff8cf82551d72cfecd.ctex::
@@ -444,21 +444,21 @@ jump.png::CompressedTexture2D::2435282901074961104::1774295651::1774295687::1:::
 run.png::CompressedTexture2D::7384362156558903395::1774295651::1774295687::1::::<><><>0<>0<>6a6f50a7493523e8fbbf02c67c2ebc7a<>res://.godot/imported/run.png-2337b8aae5f975d815e9ce7006d2646b.ctex::
 shoot.png::CompressedTexture2D::120103167274392017::1774295651::1774295686::1::::<><><>0<>0<>1151805fa4d8feb42258b86a9af11fcf<>res://.godot/imported/shoot.png-22d298f36f2ab4fa419e954e9678eefd.ctex::
 walk.png::CompressedTexture2D::6339584081208690785::1774295651::1774295687::1::::<><><>0<>0<>df1fbc97b09848261bc86ce0b0a77af6<>res://.godot/imported/walk.png-53215a34e99cc0bd662b48ceed66feb3.ctex::
-::res://Scenes/::1774903111
+::res://Scenes/::1774999520
 arrow.tscn::PackedScene::2822857845800125816::1773958086::0::1::::<><><>0<>0<><>::uid://blg2n4jxd56hy::::res://Assets/Art/Samurai_assets/Samurai_Archer/Arrow.png<>uid://db2vodl5sxle3::::res://Scripts/arrow.gd
 background.tscn::PackedScene::8890449402438998397::1774394825::0::1::::<><><>0<>0<><>::uid://me0ivn0yyrhh::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/ENVIRONMENT/background/near-buildings-bg.png<>uid://cqc2ke8vco5mt::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/ENVIRONMENT/background/skyline-a.png
-charectir.tscn::PackedScene::3999495153493319638::1774901065::0::1::::<><><>0<>0<><>::uid://beerl5ho4k7y1::::res://Scripts/character_body_2d.gd<>uid://dcytxd82j10ay::::res://Assets/Art/Samurai/idle_test_2.png<>uid://d2dg83tyde8vk::::res://Assets/Art/Samurai/Attack_2.png<>uid://c4dkwa867eueb::::res://Assets/Art/Samurai/Attack_1.png<>uid://bdrcxpiot6oeu::::res://Assets/Art/Samurai/Walk.png<>uid://b144w7s6acbsw::::res://Scripts/animated_sprite_2d.gd<>uid://co0id058eseb5::::res://Assets/Art/Samurai/Jump.png<>uid://bh28xi2hir5nj::::res://Assets/Art/Samurai/Attack_3.png<>uid://bpsg3sjbmk71b::::res://Assets/Art/Samurai/Run.png
-enemy_1.tscn::PackedScene::7372187273034861393::1774902231::0::1::::<><><>0<>0<><>::uid://bnxxxbiet6t1y::::res://Scripts/enemy_1.gd<>uid://db5rlhmnk11h0::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/idle.png<>uid://bygc1l5xtqlt::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/shoot.png
-main.tscn::PackedScene::1925445392582030452::1774903111::0::1::::<><><>0<>0<><>::uid://bwepjq8xxnasq::::res://Scenes/map.tscn<>uid://bw8ndotudyhak::::res://Scenes/charectir.tscn<>uid://dywunxttwmy3f::::res://Scenes/background.tscn<>uid://ddbe32qfjl7jx::::res://Scenes/enemy_1.tscn<>uid://xnpq8fxxoaam::::res://Scripts/bullet_1.gd<>uid://buw36dkkkgcvg::::res://Assets/Art/icon.svg
+charectir.tscn::PackedScene::3999495153493319638::1774999030::0::1::::<><><>0<>0<><>::uid://beerl5ho4k7y1::::res://Scripts/character_body_2d.gd<>uid://dcytxd82j10ay::::res://Assets/Art/Samurai/idle_test_2.png<>uid://d2dg83tyde8vk::::res://Assets/Art/Samurai/Attack_2.png<>uid://c4dkwa867eueb::::res://Assets/Art/Samurai/Attack_1.png<>uid://bdrcxpiot6oeu::::res://Assets/Art/Samurai/Walk.png<>uid://b144w7s6acbsw::::res://Scripts/animated_sprite_2d.gd<>uid://co0id058eseb5::::res://Assets/Art/Samurai/Jump.png<>uid://bh28xi2hir5nj::::res://Assets/Art/Samurai/Attack_3.png<>uid://bpsg3sjbmk71b::::res://Assets/Art/Samurai/Run.png<>uid://dyx5ioq0kaafl::::res://Assets/Art/Samurai/Dead.png
+enemy_1.tscn::PackedScene::7372187273034861393::1774999520::0::1::::<><><>0<>0<><>::uid://bnxxxbiet6t1y::::res://Scripts/enemy_1.gd<>uid://db5rlhmnk11h0::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/idle.png<>uid://bygc1l5xtqlt::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/shoot.png<>uid://ddhbmo6me1ym2::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/run.png<>uid://b8pg275qc7yse::::res://Assets/Art/Stuff/warped city files/warped city files/Assets/SPRITESHEETS/player/crouch.png
+main.tscn::PackedScene::1925445392582030452::1774998485::0::1::::<><><>0<>0<><>::uid://bwepjq8xxnasq::::res://Scenes/map.tscn<>uid://bw8ndotudyhak::::res://Scenes/charectir.tscn<>uid://dywunxttwmy3f::::res://Scenes/background.tscn<>uid://ddbe32qfjl7jx::::res://Scenes/enemy_1.tscn<>uid://xnpq8fxxoaam::::res://Scripts/bullet_1.gd<>uid://buw36dkkkgcvg::::res://Assets/Art/icon.svg
 map.tscn::PackedScene::3939760474211103724::1774561097::0::1::::<><><>0<>0<><>::uid://bltixhmkuvhfp::::res://Assets/Art/Stuff/Cyberpunk platformer - World starter/tileset/decorations.png<>uid://dc0eb5to1ywgn::::res://Assets/Art/Stuff/Cyberpunk platformer - World starter/tileset/main_tileset.png
 platform.tscn::PackedScene::6993450265694474517::1773957704::0::1::::<><><>0<>0<><>::uid://buw36dkkkgcvg::::res://Assets/Art/icon.svg<>uid://bw8ndotudyhak::::res://Scenes/charectir.tscn<>uid://cxc8jhsb0vpqe::::res://Scenes/test_dummy.tscn<>uid://bfaadrsem0sbg::::res://Scenes/samurai_archer.tscn
 samurai_archer.tscn::PackedScene::2737371180167190776::1774392615::0::1::::<><><>0<>0<><>::uid://ccj8v4jeqirqp::::res://Scripts/samurai_archer.gd<>uid://c25gbr3mb0u5c::::res://Assets/Art/Samurai_assets/Samurai_Archer/Idle.png<>uid://bghob6cv5cav5::::res://Scenes/arrow.tscn
 test_dummy.tscn::PackedScene::6393333655025121464::1774490804::0::1::::<><><>0<>0<><>::uid://buw36dkkkgcvg::::res://Assets/Art/icon.svg<>uid://vpykov27mnv::::res://Scripts/test_dummy.gd
-::res://Scripts/::1774902729
+::res://Scripts/::1774999520
 animated_sprite_2d.gd::GDScript::4272999363368074350::1773691693::0::1::::<>AnimatedSprite2D<><>0<>0<><>::
 arrow.gd::GDScript::7286489327990646440::1774393651::0::1::::<>Area2D<><>0<>0<><>::
-bullet_1.gd::GDScript::1642121384142374796::1774902729::0::1::::<>Area2D<><>0<>0<><>::
-character_body_2d.gd::GDScript::2676486989060869226::1774490244::0::1::::<>CharacterBody2D<><>0<>0<><>::
-enemy_1.gd::GDScript::3347793968514497024::1774902231::0::1::::<>CharacterBody2D<><>0<>0<><>::
+bullet_1.gd::GDScript::1642121384142374796::1774998196::0::1::::<>Area2D<><>0<>0<><>::
+character_body_2d.gd::GDScript::2676486989060869226::1774999230::0::1::::<>CharacterBody2D<><>0<>0<><>::
+enemy_1.gd::GDScript::3347793968514497024::1774999520::0::1::::<>CharacterBody2D<><>0<>0<><>::
 samurai_archer.gd::GDScript::4933841154165952627::1773956793::0::1::::<>CharacterBody2D<><>0<>0<><>::
 test_dummy.gd::GDScript::44306094632730063::1774490804::0::1::::<>Area2D<><>0<>0<><>::

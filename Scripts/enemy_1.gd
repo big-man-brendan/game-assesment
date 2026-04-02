@@ -83,9 +83,5 @@ func _on_bullet_1_hit() -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-	
-	$AnimatedSprite2D.play("dead")
-	
-	await  get_tree().create_timer(1).timeout
-	
+
 	position.x = 100000

@@ -5,11 +5,12 @@
 
 [node name="Node2D" type="Node2D" unique_id=1461438796]
 visible = false
+z_index = 147
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=385572965]
 scroll_scale = Vector2(0.535, 0.535)
 repeat_size = Vector2(127.48, 0)
-repeat_times = 20
+repeat_times = 1448
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D" unique_id=880387033]
 position = Vector2(48, 91.99999)
@@ -20,6 +21,11 @@ texture = ExtResource("2_pojwb")
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Parallax2D/CanvasLayer" unique_id=1183760581]
+anchors_preset = -1
+anchor_left = 6.387858
+anchor_top = -1.1305945
+anchor_right = 6.513192
+anchor_bottom = -0.7722267
 offset_left = 1583.0
 offset_top = -418.0
 offset_right = 1623.0
@@ -31,7 +37,7 @@ metadata/_edit_use_anchors_ = true
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1480424046]
 scroll_scale = Vector2(0.755, 0.8)
 repeat_size = Vector2(500, 0)
-repeat_times = 20
+repeat_times = 334
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1610747632]
 position = Vector2(9, 130)

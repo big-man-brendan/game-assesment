@@ -19,15 +19,13 @@ func _process(delta: float) -> void:
 func _on_area_entered(area: Area2D) -> void:
 	
 	
-	hits += 1
+
+	print("Hit")
 	
-	if hits == 2:
-		print("Hit")
-		
-		emit_signal("hit")
-		
-		hits = 0
-		position.x = 100000
+	emit_signal("hit")
+	
+	hits = 0
+	position.x = 100000
 		
 		
 

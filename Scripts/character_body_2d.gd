@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Varaibles
 
-
+var health = 5
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
@@ -27,7 +27,11 @@ func reset():
 	
 	$AnimatedSprite2D.play("Death")
 
-
+func take_damage(amount):
+	
+	health -= 1
+	
+	
 
 func _physics_process(delta: float) -> void:
 	
@@ -224,4 +228,4 @@ func _on_ladder_detector_body_exited(body: Node2D) -> void:
 
 
 func _on_bullet_1_hit() -> void:
-	reset()
+	take_damage(1)
