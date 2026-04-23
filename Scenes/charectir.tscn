@@ -431,7 +431,7 @@ collision_layer = 32
 collision_mask = 32
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LadderDetector" unique_id=562584751]
-position = Vector2(0, 20.5)
+position = Vector2(0, 22)
 shape = SubResource("RectangleShape2D_r167d")
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

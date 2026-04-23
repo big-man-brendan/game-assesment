@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://cqc2ke8vco5mt" path="res://Assets/Art/Stuff/warped city files/warped city files/Assets/ENVIRONMENT/background/skyline-a.png" id="2_pojwb"]
 
 [node name="Node2D" type="Node2D" unique_id=1461438796]
-visible = false
 z_index = 147
+metadata/_edit_horizontal_guides_ = [141.0]
 
 [node name="Parallax2D" type="Parallax2D" parent="." unique_id=385572965]
 scroll_scale = Vector2(0.535, 0.535)
@@ -21,6 +21,7 @@ texture = ExtResource("2_pojwb")
 visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Parallax2D/CanvasLayer" unique_id=1183760581]
+visible = false
 anchors_preset = -1
 anchor_left = 6.387858
 anchor_top = -1.1305945
@@ -35,6 +36,7 @@ color = Color(0, 0, 0.23529412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1480424046]
+visible = false
 scroll_scale = Vector2(0.755, 0.8)
 repeat_size = Vector2(500, 0)
 repeat_times = 334
@@ -42,3 +44,11 @@ repeat_times = 334
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D2" unique_id=1610747632]
 position = Vector2(9, 130)
 texture = ExtResource("1_sn1xx")
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=1035011636]
+position = Vector2(1072, 968)
+texture = ExtResource("2_pojwb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1951054250]
+position = Vector2(944, 968)
+texture = ExtResource("2_pojwb")

@@ -1,4 +1,5 @@
 TextureProgressBar
+Parallax2D
 Timer
 CollisionShape2D
 Sprite2D
@@ -7,7 +8,6 @@ AnimatedSprite2D
 CharacterBody2D
 ColorRect
 CanvasLayer
-Parallax2D
 Camera2D
 Node2D
 TileMap

@@ -31,6 +31,11 @@ func take_damage(amount):
 	
 	health -= 1
 	
+	$TextureProgressBar.progress
+	
+	if health == 0:
+		reset()
+	
 	
 
 func _physics_process(delta: float) -> void:

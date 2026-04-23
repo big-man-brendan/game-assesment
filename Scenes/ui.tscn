@@ -1,5 +1,7 @@
 [gd_scene format=3 uid="uid://i2scdrcpoui5"]
 
+[sub_resource type="Theme" id="Theme_wviqb"]
+
 [node name="UI" type="Control" unique_id=1884328492]
 layout_mode = 3
 anchors_preset = 15
@@ -10,5 +12,9 @@ grow_vertical = 2
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1039142740]
 layout_mode = 0
-offset_right = 40.0
+offset_right = 466.0
 offset_bottom = 40.0
+theme = SubResource("Theme_wviqb")
+tint_under = Color(1, 0, 0, 1)
+tint_over = Color(1, 0, 0, 1)
+tint_progress = Color(1, 0, 0, 1)
