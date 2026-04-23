@@ -7,6 +7,7 @@ var is_flipped = false
 var shot = false
 @onready var start_pos = position
 
+charector
 
 signal shoot()
 
@@ -16,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	
-	if $"../Charectir".position > global_position:
+	if $"../../Charectir".position > global_position:
 		velocity.x = SPEED
 		$AnimatedSprite2D.flip_h = false
 		is_flipped = false
@@ -32,7 +33,7 @@ func _physics_process(delta: float) -> void:
 	if randf()>0.99 and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	if $"../Charectir".global_position.distance_to(global_position) < 500 and $"../Charectir".global_position.distance_to(global_position) > 250:
+	if $"../../Charectir".global_position.distance_to(global_position) < 500 and $"../Charectir".global_position.distance_to(global_position) > 250:
 		
 		
 		if $"../Charectir".position > global_position:
@@ -79,9 +80,15 @@ func _on_shottimer_timeout() -> void:
 
 
 func _on_bullet_1_hit() -> void:
-	position = start_pos
+	pass
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
 
 	position.x = 100000
+
+
+func _on_charectir_death() -> void:
+	await get_tree().create_timer(2).timeout
+	print("death")
+	position = start_pos

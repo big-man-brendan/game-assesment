@@ -1,20 +1,39 @@
 [gd_scene format=3 uid="uid://i2scdrcpoui5"]
 
-[sub_resource type="Theme" id="Theme_wviqb"]
+[ext_resource type="Texture2D" uid="uid://b82keb6w8gqdf" path="res://Assets/Art/red_sqaure.jpg" id="1_jxero"]
+[ext_resource type="Script" uid="uid://btfdt5fj6xkoy" path="res://Scripts/ui.gd" id="1_nf4gj"]
+[ext_resource type="Script" uid="uid://b6i6rujos63y1" path="res://Scripts/texture_progress_bar.gd" id="2_qdvrb"]
 
-[node name="UI" type="Control" unique_id=1884328492]
+[sub_resource type="Theme" id="Theme_jxero"]
+
+[node name="ui" type="CanvasLayer" unique_id=458192259]
+script = ExtResource("1_nf4gj")
+
+[node name="Control" type="Control" parent="." unique_id=1928521042]
 layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="TextureProgressBar" type="TextureProgressBar" parent="." unique_id=1039142740]
-layout_mode = 0
-offset_right = 466.0
+anchors_preset = 0
+offset_right = 40.0
 offset_bottom = 40.0
-theme = SubResource("Theme_wviqb")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Control" unique_id=1300519609]
+layout_mode = 0
+offset_top = 54.0
+offset_right = 275.0
+offset_bottom = 237.0
+scale = Vector2(1.835, 0.315)
+theme = SubResource("Theme_jxero")
+value = 100.0
+texture_progress = ExtResource("1_jxero")
 tint_under = Color(1, 0, 0, 1)
 tint_over = Color(1, 0, 0, 1)
 tint_progress = Color(1, 0, 0, 1)
+script = ExtResource("2_qdvrb")
+
+[node name="Label" type="Label" parent="Control/TextureProgressBar" unique_id=1408281011]
+layout_mode = 0
+offset_left = 4.3596764
+offset_top = -146.03174
+offset_right = 56.359676
+offset_bottom = -123.03174
+scale = Vector2(2.01, 6.525)
+text = "Health"

@@ -1,3 +1,7 @@
+Node
+Control
+CanvasLayer
+Label
 TextureProgressBar
 Parallax2D
 Timer
@@ -7,8 +11,5 @@ Area2D
 AnimatedSprite2D
 CharacterBody2D
 ColorRect
-CanvasLayer
 Camera2D
 Node2D
-TileMap
-StaticBody2D

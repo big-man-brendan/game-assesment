@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 #Varaibles
 
-var health = 5
+var health = 4
 const SPEED = 300.0
 const JUMP_VELOCITY = -500.0
 @onready var direction = 0
@@ -14,7 +14,9 @@ var damage_og_pos = Vector2(0,25)
 var on_ladder = false
 @onready var dead = false
 
+signal damage
 signal dash
+signal death
 
 func _ready() -> void:
 	
@@ -26,14 +28,21 @@ func reset():
 	dead = true
 	
 	$AnimatedSprite2D.play("Death")
+	
+	await get_tree().create_timer(2).timeout
+	emit_signal("death")
+	
+	health = 4
+	
 
 func take_damage(amount):
 	
 	health -= 1
 	
-	$TextureProgressBar.progress
-	
+	emit_signal("damage")
+
 	if health == 0:
+		
 		reset()
 	
 	
@@ -98,6 +107,7 @@ func _physics_process(delta: float) -> void:
 			velocity.y = 0
 	
 	if position.y > 1000:
+		emit_signal("death")
 		reset()
 	
 	var newdirection = 0
@@ -226,7 +236,7 @@ func _on_ladder_detector_body_entered(body: Node2D) -> void:
 	on_ladder = true
 	print("On ladder")
 	velocity.y = 0
-
+	
 func _on_ladder_detector_body_exited(body: Node2D) -> void:
 	on_ladder = false
 	print("Off ladder")
