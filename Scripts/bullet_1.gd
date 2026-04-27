@@ -18,9 +18,10 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	
-	
-
 	print("Hit")
+
+	#the player
+	$".".taking_damage = true
 	
 	emit_signal("hit")
 	
@@ -43,6 +44,7 @@ func _on_enemy_1_shoot() -> void:
 		
 	else:
 		shooting_dir = 1
-		
+	
+	
 	
 	

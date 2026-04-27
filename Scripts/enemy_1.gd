@@ -6,9 +6,8 @@ const JUMP_VELOCITY = -400.0
 var is_flipped = false
 var shot = false
 @onready var start_pos = position
-
-charector
-
+@onready var player = $"../../Charectir"
+@onready var bullet = $"../Bullet1"
 signal shoot()
 
 func _physics_process(delta: float) -> void:
@@ -17,7 +16,7 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 	
 	
-	if $"../../Charectir".position > global_position:
+	if player.position > global_position:
 		velocity.x = SPEED
 		$AnimatedSprite2D.flip_h = false
 		is_flipped = false
@@ -33,10 +32,10 @@ func _physics_process(delta: float) -> void:
 	if randf()>0.99 and is_on_floor():
 		velocity.y = JUMP_VELOCITY
 	
-	if $"../../Charectir".global_position.distance_to(global_position) < 500 and $"../Charectir".global_position.distance_to(global_position) > 250:
+	if player.global_position.distance_to(global_position) < 500 and player.global_position.distance_to(global_position) > 250:
 		
 		
-		if $"../Charectir".position > global_position:
+		if player.position > global_position:
 			velocity.x = SPEED
 			$AnimatedSprite2D.flip_h = false
 			is_flipped = false
@@ -50,7 +49,7 @@ func _physics_process(delta: float) -> void:
 		
 		velocity.x = 0
 	
-	if $"../Charectir".global_position.distance_to(global_position) < 280:
+	if player.global_position.distance_to(global_position) < 280:
 		
 		
 		$AnimatedSprite2D.play("Walk")

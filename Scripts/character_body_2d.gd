@@ -13,6 +13,8 @@ var dashing_on_floor = false
 var damage_og_pos = Vector2(0,25) 
 var on_ladder = false
 @onready var dead = false
+@onready var taking_damage = false
+
 
 signal damage
 signal dash
@@ -20,7 +22,9 @@ signal death
 
 func _ready() -> void:
 	
+	
 	print("ready")
+	#bullet.hit().connect(take_damage(1))
 	$Damage_box.position.x = 100000
 	
 	
@@ -49,6 +53,9 @@ func take_damage(amount):
 
 func _physics_process(delta: float) -> void:
 	
+	if taking_damage == true:
+		take_damage(1)
+		taking_damage = false
 	
 	velocity.y = clamp(velocity.y,-1000,1000)
 	
@@ -190,6 +197,8 @@ func _physics_process(delta: float) -> void:
 	else:
 		direction = newdirection
 	
+	
+	
 	move_and_slide()
 	
 	#print(onladder)
@@ -202,17 +211,12 @@ func _on_dash_timer_timeout() -> void:
 	print(dashtime)
 	print("time out")
 	
-
-
 func _on_hitbox_body_entered(body: ) -> void:
 	print("Reset")
 	reset()
 	
-#Testing testiong testing
-
 func _on_dash_on_floor_timer_timeout() -> void:
 	dashing_on_floor = false
-
 
 func _on_attack_timer_timeout() -> void:
 	
@@ -224,14 +228,10 @@ func _on_attack_timer_timeout() -> void:
 
 	print("stopped attacking")
 
-
-
 func _on_hurt_box_area_entered(area: Area2D) -> void:
 	
 	print("HIT HIT")
 	
-
-
 func _on_ladder_detector_body_entered(body: Node2D) -> void:
 	on_ladder = true
 	print("On ladder")
@@ -242,5 +242,8 @@ func _on_ladder_detector_body_exited(body: Node2D) -> void:
 	print("Off ladder")
 
 
+
+
 func _on_bullet_1_hit() -> void:
+	
 	take_damage(1)

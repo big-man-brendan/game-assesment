@@ -2,9 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://c7cf23v2ek5be" path="res://Scenes/level_1.tscn" id="1_jjgbg"]
 [ext_resource type="PackedScene" uid="uid://bw8ndotudyhak" path="res://Scenes/charectir.tscn" id="2_8gbba"]
+[ext_resource type="PackedScene" uid="uid://i2scdrcpoui5" path="res://Scenes/ui.tscn" id="3_8gbba"]
 
 [node name="Main" type="Node2D" unique_id=1981064212]
 
 [node name="Level 1" parent="." unique_id=150343350 instance=ExtResource("1_jjgbg")]
 
 [node name="Charectir" parent="." unique_id=579283918 instance=ExtResource("2_8gbba")]
+z_index = 23
+position = Vector2(0, -78)
+
+[node name="Camera2D" type="Camera2D" parent="Charectir" unique_id=942028167]
+zoom = Vector2(1.485, 1.485)
+position_smoothing_enabled = true
+position_smoothing_speed = 12.71
+
+[node name="ui" parent="." unique_id=458192259 instance=ExtResource("3_8gbba")]
