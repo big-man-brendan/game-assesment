@@ -21,7 +21,7 @@ func _on_area_entered(area: Area2D) -> void:
 	print("Hit")
 
 	#the player
-	$".".taking_damage = true
+	$"../../Charectir".taking_damage = true
 	
 	emit_signal("hit")
 	

@@ -6,7 +6,9 @@
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_myvm1"]
 texture = ExtResource("1_26yhd")
 1:1/0 = 0
+1:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:1/0 = 0
+2:1/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:1/0 = 0
 4:1/0 = 0
 5:1/0 = 0
@@ -19,7 +21,9 @@ texture = ExtResource("1_26yhd")
 14:1/0 = 0
 15:1/0 = 0
 1:2/0 = 0
+1:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:2/0 = 0
+2:2/0/physics_layer_2/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 3:2/0 = 0
 4:2/0 = 0
 5:2/0 = 0
@@ -439,6 +443,8 @@ texture = ExtResource("2_p3ir5")
 physics_layer_0/collision_layer = 1
 physics_layer_1/collision_layer = 32
 physics_layer_1/collision_mask = 32
+physics_layer_2/collision_layer = 64
+physics_layer_2/collision_mask = 64
 sources/0 = SubResource("TileSetAtlasSource_myvm1")
 sources/1 = SubResource("TileSetAtlasSource_q0mm3")
 
@@ -447,7 +453,5 @@ tile_set = SubResource("TileSet_np2xp")
 format = 2
 layer_0/name = "RealStuff"
 layer_0/y_sort_origin = -4
-layer_0/tile_data = PackedInt32Array(1, 327681, 12, 4, 327681, 12, 7, 327681, 12, 10, 327681, 12, -131056, 327681, 536870913, -327664, 327681, 1, 13, 327681, 12, 16, 327681, 12, -65522, 65537, 16, -131058, 65537, 16, -196594, 65537, 16, -262130, 65537, 16, -327666, 65537, 16, -393202, 65537, 16, -458738, 65537, 15, -524271, 262145, 14)
 layer_1/name = "Background"
 layer_1/y_sort_origin = 5
-layer_1/tile_data = PackedInt32Array(-131068, 458752, 3, -65532, 458752, 4, -131067, 524288, 3, -65531, 524288, 4, -196600, 589824, 2, -131064, 589824, 3, -65528, 589824, 4, -262135, 655360, 1, -196599, 655360, 2, -131063, 655360, 3, -65527, 655360, 4, -262134, 720896, 1, -196598, 720896, 2, -131062, 720896, 3, -65526, 720896, 4, -196597, 786432, 2, -131061, 786432, 3, -65525, 786432, 4)

@@ -8,6 +8,7 @@ var shot = false
 @onready var start_pos = position
 @onready var player = $"../../Charectir"
 @onready var bullet = $"../Bullet1"
+
 signal shoot()
 
 func _physics_process(delta: float) -> void:

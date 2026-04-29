@@ -15,7 +15,7 @@ var on_ladder = false
 @onready var dead = false
 @onready var taking_damage = false
 
-
+signal next_level
 signal damage
 signal dash
 signal death
@@ -247,3 +247,8 @@ func _on_ladder_detector_body_exited(body: Node2D) -> void:
 func _on_bullet_1_hit() -> void:
 	
 	take_damage(1)
+
+func _on_elevator_help_body_entered(body: Node2D) -> void:
+		_ready()
+		emit_signal("next_level")
+		print("Elevator touched")
