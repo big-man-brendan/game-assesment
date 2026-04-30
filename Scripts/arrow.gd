@@ -10,6 +10,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	
+	#stuff for the old enemy that was broken
+	
 	print(direction)
 	
 	if shooting:
@@ -21,7 +24,9 @@ func _process(delta: float) -> void:
 
 
 func shoot() -> void:
-		
+	
+	#resets back to the middle and points it in the right direction
+	
 	position = Vector2(0,0)
 	direction = ($"../../Charectir".global_position - global_position).normalized()
 	rotation = direction.angle()
@@ -31,6 +36,8 @@ func shoot() -> void:
 	
 	
 func _on_area_entered(area: Area2D) -> void:
+	
+	#tries to see if its hit something it doesnt work
 	
 	await get_tree().physics_frame
 	shooting = false

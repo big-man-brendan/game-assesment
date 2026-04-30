@@ -18,10 +18,10 @@ scale = Vector2(1.9385544, 1.9385544)
 texture = ExtResource("2_pojwb")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="Parallax2D" unique_id=1809338198]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Parallax2D/CanvasLayer" unique_id=1183760581]
 visible = false
+z_index = -128
 anchors_preset = -1
 anchor_left = 6.387858
 anchor_top = -1.1305945
@@ -36,7 +36,6 @@ color = Color(0, 0, 0.23529412, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="Parallax2D2" type="Parallax2D" parent="." unique_id=1480424046]
-visible = false
 scroll_scale = Vector2(0.755, 0.8)
 repeat_size = Vector2(500, 0)
 repeat_times = 334

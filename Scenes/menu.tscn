@@ -1,0 +1,48 @@
+[gd_scene format=3 uid="uid://bph1nurb4s4tp"]
+
+[ext_resource type="Script" uid="uid://d3g17vnj50ogx" path="res://Scripts/control.gd" id="1_cayip"]
+[ext_resource type="FontFile" uid="uid://dyeb4omudrf1e" path="res://Assets/Fonts/polarized/polarized bd it.otf" id="2_158mb"]
+[ext_resource type="Texture2D" uid="uid://lxh0syrgkywl" path="res://Assets/Fonts/download.jpg" id="3_wwsa2"]
+
+[node name="Menu" type="CanvasLayer" unique_id=1538904366]
+script = ExtResource("1_cayip")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=758374211]
+position = Vector2(586.25, 332)
+scale = Vector2(3.9314382, 3.9880953)
+texture = ExtResource("3_wwsa2")
+
+[node name="StartButton" type="Button" parent="." unique_id=1283943246]
+anchors_preset = -1
+offset_left = 227.0
+offset_top = 250.0
+offset_right = 915.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 111
+text = "Start game
+"
+
+[node name="QuitButton" type="Button" parent="." unique_id=251290223]
+anchors_preset = -1
+offset_left = 227.0
+offset_top = 443.0
+offset_right = 915.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 111
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=1240102067]
+offset_left = 227.0
+offset_top = 40.0
+offset_right = 915.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("2_158mb")
+theme_override_font_sizes/font_size = 79
+text = "Cyberknight"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

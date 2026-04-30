@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://dpaxf3e2sdus8"]
+
+[ext_resource type="Script" uid="uid://b810hkce0041q" path="res://Scripts/deadscreen.gd" id="1_fmopl"]
+[ext_resource type="Texture2D" uid="uid://lxh0syrgkywl" path="res://Assets/Fonts/download.jpg" id="1_w8jpq"]
+[ext_resource type="FontFile" uid="uid://dyeb4omudrf1e" path="res://Assets/Fonts/polarized/polarized bd it.otf" id="2_fmopl"]
+
+[node name="Deadscreen" type="CanvasLayer" unique_id=2029888341]
+script = ExtResource("1_fmopl")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1010637587]
+position = Vector2(586.25, 332)
+scale = Vector2(3.9314382, 3.9880953)
+texture = ExtResource("1_w8jpq")
+
+[node name="StartButton" type="Button" parent="." unique_id=1150749261]
+anchors_preset = -1
+offset_left = 227.0
+offset_top = 250.0
+offset_right = 915.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("2_fmopl")
+theme_override_font_sizes/font_size = 111
+text = "Play again"
+
+[node name="QuitButton" type="Button" parent="." unique_id=914680639]
+anchors_preset = -1
+offset_left = 227.0
+offset_top = 443.0
+offset_right = 915.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("2_fmopl")
+theme_override_font_sizes/font_size = 111
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="." unique_id=981294089]
+offset_left = 227.0
+offset_top = 40.0
+offset_right = 915.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("2_fmopl")
+theme_override_font_sizes/font_size = 79
+text = "You Died!!!"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]

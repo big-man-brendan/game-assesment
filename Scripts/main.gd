@@ -5,6 +5,9 @@ extends Node2D
 @onready var level = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	
+	$ui.hide()
+	
 	for i in levels:
 		i.position = Vector2(0,100000000)
 	
@@ -13,7 +16,8 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-
+	
+	
 
 func _on_charectir_next_level() -> void:
 	print("next level")
@@ -26,4 +30,9 @@ func _on_charectir_next_level() -> void:
 	
 	print(level)
 	
+
+func _on_menu_start_game() -> void:
+	print("Game started")
 	
+	$ui.show()
+	$Menu.hide()

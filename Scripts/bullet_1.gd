@@ -13,25 +13,29 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 	
+	#moves the bullet towards the player. 
+	
 	position.x -= 10 * shooting_dir 
 	
 
 func _on_area_entered(area: Area2D) -> void:
 	
+	#lets us see if the bullet has entered the player because its cooked
+	
 	print("Hit")
 
-	#the player
+	
 	$"../../Charectir".taking_damage = true
 	
 	emit_signal("hit")
 	
 	hits = 0
 	position.x = 100000
-		
-		
 
 
 func _on_enemy_1_shoot() -> void:
+	
+	#acully shoots the bullet when its supposed to
 	
 	hits = 0
 	

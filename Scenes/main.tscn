@@ -5,6 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://bw8ndotudyhak" path="res://Scenes/charectir.tscn" id="2_8gbba"]
 [ext_resource type="PackedScene" uid="uid://i2scdrcpoui5" path="res://Scenes/ui.tscn" id="3_8gbba"]
 [ext_resource type="PackedScene" uid="uid://cmo55dw6yxu88" path="res://Scenes/level_2.tscn" id="3_kry3j"]
+[ext_resource type="PackedScene" uid="uid://bph1nurb4s4tp" path="res://Scenes/menu.tscn" id="6_21xkr"]
+[ext_resource type="PackedScene" uid="uid://dpaxf3e2sdus8" path="res://Scenes/deadscreen.tscn" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=1981064212]
 script = ExtResource("1_jjvhh")
@@ -24,6 +26,12 @@ position_smoothing_speed = 12.71
 
 [node name="ui" parent="." unique_id=458192259 instance=ExtResource("3_8gbba")]
 
+[node name="Menu" parent="." unique_id=1538904366 instance=ExtResource("6_21xkr")]
+
+[node name="Deadscreen" parent="." unique_id=2029888341 instance=ExtResource("7_6bp64")]
+visible = false
+
 [connection signal="damage" from="Charectir" to="ui" method="_on_charectir_damage"]
 [connection signal="death" from="Charectir" to="ui" method="_on_charectir_death"]
 [connection signal="next_level" from="Charectir" to="." method="_on_charectir_next_level"]
+[connection signal="start_game" from="Menu" to="." method="_on_menu_start_game"]

@@ -64,6 +64,7 @@ func _physics_process(delta: float) -> void:
 		if $AnimatedSprite2D.frame == 5:
 			
 			$AnimatedSprite2D.play("Idle")
+			$"../Deadscreen".show()
 			position.y = -100
 			position.x = 0
 			velocity = Vector2(0,-20)

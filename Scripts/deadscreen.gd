@@ -9,18 +9,12 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	pass
-	
 
 
 
-	
+func _on_start_button_pressed() -> void:
+	get_tree().reload_current_scene()
 
 
-func _on_charectir_damage() -> void:
-	#takes damage when its taking damage
-	$Control/TextureProgressBar.value -= 25
-
-
-func _on_charectir_death() -> void:
-	#resets back to full hp when it can
-	$Control/TextureProgressBar.value = 100
+func _on_quit_button_pressed() -> void:
+	get_tree().quit()
