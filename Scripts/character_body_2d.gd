@@ -249,6 +249,8 @@ func _on_bullet_1_hit() -> void:
 	take_damage(1)
 
 func _on_elevator_help_body_entered(body: Node2D) -> void:
-		_ready()
+	
+		position.y = -100
+		position.x = 0
 		emit_signal("next_level")
 		print("Elevator touched")
