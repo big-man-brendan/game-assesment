@@ -22,6 +22,7 @@ signal death
 
 func _ready() -> void:
 	
+	#moves the attack box away to start
 	
 	print("ready")
 	#bullet.hit().connect(take_damage(1))
@@ -29,6 +30,9 @@ func _ready() -> void:
 	
 	
 func reset():
+	
+	#resets the player when they died
+	
 	dead = true
 	
 	$AnimatedSprite2D.play("Death")
@@ -41,6 +45,7 @@ func reset():
 
 func take_damage(amount):
 	
+	#makes them take damage and sends signal to the health bar
 	health -= 1
 	
 	emit_signal("damage")
@@ -52,6 +57,11 @@ func take_damage(amount):
 	
 
 func _physics_process(delta: float) -> void:
+	
+	
+	#hands movement, dashing, animation, and attacking
+	#and ladders and dying
+	
 	
 	if taking_damage == true:
 		take_damage(1)
@@ -207,19 +217,25 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_dash_timer_timeout() -> void:
-
+	
+	#just the cooldown for the dash
+	
 	dashtime = true
 	print(dashtime)
 	print("time out")
 	
 func _on_hitbox_body_entered(body: ) -> void:
+	#for when you take damage 
 	print("Reset")
 	reset()
 	
 func _on_dash_on_floor_timer_timeout() -> void:
+	#timeout for when you go from "dashing" to not dashing
 	dashing_on_floor = false
 
 func _on_attack_timer_timeout() -> void:
+	
+	#when the attack ends, move the attackbox away
 	
 	attacking = false
 	
@@ -230,15 +246,19 @@ func _on_attack_timer_timeout() -> void:
 	print("stopped attacking")
 
 func _on_hurt_box_area_entered(area: Area2D) -> void:
-	
+	#if you take damage
 	print("HIT HIT")
 	
 func _on_ladder_detector_body_entered(body: Node2D) -> void:
+	
+	#to detect if your on a ladder and stuff
+	
 	on_ladder = true
 	print("On ladder")
 	velocity.y = 0
 	
 func _on_ladder_detector_body_exited(body: Node2D) -> void:
+	#to detect if you off a ladder
 	on_ladder = false
 	print("Off ladder")
 
@@ -247,10 +267,13 @@ func _on_ladder_detector_body_exited(body: Node2D) -> void:
 
 func _on_bullet_1_hit() -> void:
 	
+	#to detect when you get hit with a bullet
+	
 	take_damage(1)
 
 func _on_elevator_help_body_entered(body: Node2D) -> void:
-	
+		
+		#when you go to the next level it works properly
 		position.y = -100
 		position.x = 0
 		emit_signal("next_level")

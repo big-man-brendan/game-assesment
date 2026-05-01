@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ddbe32qfjl7jx" path="res://Scenes/enemy_1.tscn" id="5_ait6c"]
 [ext_resource type="Script" uid="uid://xnpq8fxxoaam" path="res://Scripts/bullet_1.gd" id="6_vcilj"]
 [ext_resource type="Texture2D" uid="uid://buw36dkkkgcvg" path="res://Assets/Art/icon.svg" id="7_bl0du"]
+[ext_resource type="Script" uid="uid://2oul5adkstai" path="res://Scenes/area_2d.gd" id="8_2mgoq"]
+[ext_resource type="Texture2D" uid="uid://lxh0syrgkywl" path="res://Assets/Fonts/download.jpg" id="9_42uki"]
+[ext_resource type="Script" uid="uid://ckqc6ty3dsivd" path="res://Scripts/drummy.gd" id="9_t7v2y"]
+[ext_resource type="FontFile" uid="uid://dyeb4omudrf1e" path="res://Assets/Fonts/polarized/polarized bd it.otf" id="10_t7v2y"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xrdnt"]
 texture = ExtResource("2_uhnj4")
@@ -456,6 +460,9 @@ sources/1 = SubResource("TileSetAtlasSource_wrinw")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_af3po"]
 size = Vector2(18.57193, 8.17164)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_055b2"]
+size = Vector2(184.5, 93)
+
 [node name="Level 2" type="Node2D" unique_id=82965293]
 
 [node name="Map" parent="." unique_id=434809926 instance=ExtResource("1_2mgoq")]
@@ -494,5 +501,55 @@ position = Vector2(9.65751, -11.143135)
 scale = Vector2(1.0000001, 1.0000001)
 shape = SubResource("RectangleShape2D_af3po")
 
+[node name="Area2D" type="Area2D" parent="." unique_id=69411114]
+collision_layer = 255
+collision_mask = 255
+script = ExtResource("8_2mgoq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1694781550]
+position = Vector2(1977, -739)
+shape = SubResource("RectangleShape2D_055b2")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=610401131]
+script = ExtResource("9_t7v2y")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer" unique_id=411251290]
+position = Vector2(586.25, 332)
+scale = Vector2(3.9314382, 3.9880953)
+texture = ExtResource("9_42uki")
+
+[node name="StartButton" type="Button" parent="CanvasLayer" unique_id=1597340554]
+offset_left = 227.0
+offset_top = 250.0
+offset_right = 915.0
+offset_bottom = 402.0
+theme_override_fonts/font = ExtResource("10_t7v2y")
+theme_override_font_sizes/font_size = 111
+text = "Play again"
+
+[node name="QuitButton" type="Button" parent="CanvasLayer" unique_id=2032819993]
+offset_left = 227.0
+offset_top = 443.0
+offset_right = 915.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("10_t7v2y")
+theme_override_font_sizes/font_size = 111
+text = "Quit
+"
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=931912323]
+offset_left = 227.0
+offset_top = 40.0
+offset_right = 915.0
+offset_bottom = 136.0
+theme_override_fonts/font = ExtResource("10_t7v2y")
+theme_override_font_sizes/font_size = 79
+text = "Congrats 
+You won!!!!"
+horizontal_alignment = 1
+
 [connection signal="shoot" from="Enemy1" to="Bullet1" method="_on_enemy_1_shoot"]
 [connection signal="area_entered" from="Bullet1" to="Bullet1" method="_on_area_entered"]
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
+[connection signal="pressed" from="CanvasLayer/StartButton" to="CanvasLayer" method="_on_start_button_pressed"]
+[connection signal="pressed" from="CanvasLayer/QuitButton" to="CanvasLayer" method="_on_quit_button_pressed"]

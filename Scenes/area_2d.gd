@@ -1,9 +1,5 @@
-extends CanvasLayer
+extends Area2D
 
-signal start_game
-
-
-#Just stuff
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -15,11 +11,6 @@ func _process(delta: float) -> void:
 	pass
 
 
-func _on_start_button_pressed() -> void:
-	print("Start button presed")
-	emit_signal("start_game")
-
-
-func _on_quit_button_pressed() -> void:
-	print("quit button pressed")
-	get_tree().quit()
+func _on_body_entered(body: Node2D) -> void:
+	print("juedek")
+	$"../CanvasLayer".show()

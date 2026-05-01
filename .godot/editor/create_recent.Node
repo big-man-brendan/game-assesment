@@ -1,4 +1,6 @@
 CanvasLayer
+CollisionShape2D
+Area2D
 Sprite2D
 Window
 TextureRect
@@ -7,8 +9,6 @@ Label
 Button
 Control
 Node2D
-CollisionShape2D
-Area2D
 Camera2D
 Node
 TextureProgressBar

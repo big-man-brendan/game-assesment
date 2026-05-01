@@ -6,6 +6,9 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	
+	
+	#sets up the main menu and the first level for playing
+	
 	$ui.hide()
 	
 	for i in levels:
@@ -20,6 +23,9 @@ func _process(delta: float) -> void:
 	
 
 func _on_charectir_next_level() -> void:
+	
+	#simpley moves the current level away then move the next level into place
+	
 	print("next level")
 	
 	levels[level].position = Vector2(0,99999999)
@@ -32,6 +38,7 @@ func _on_charectir_next_level() -> void:
 	
 
 func _on_menu_start_game() -> void:
+	#starts once you press the start button
 	print("Game started")
 	
 	$ui.show()

@@ -9,9 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://dpaxf3e2sdus8" path="res://Scenes/deadscreen.tscn" id="7_6bp64"]
 
 [node name="Main" type="Node2D" unique_id=1981064212]
+position = Vector2(0, -1)
 script = ExtResource("1_jjvhh")
 
 [node name="Level 1" parent="." unique_id=150343350 instance=ExtResource("1_jjgbg")]
+position = Vector2(1, 0)
 
 [node name="Level 2" parent="." unique_id=82965293 instance=ExtResource("3_kry3j")]
 

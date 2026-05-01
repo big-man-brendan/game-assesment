@@ -15,6 +15,8 @@ func _process(delta: float) -> void:
 
 func _on_area_entered(area: Area2D) -> void:
 	
+	#just testing the hit system
+	
 	print("Hit")
 	print(get_overlapping_areas())
 	scale = Vector2(0.5,0.5)
@@ -22,6 +24,7 @@ func _on_area_entered(area: Area2D) -> void:
 	
 
 func _on_hit_timer_timeout() -> void:
+	#resets back to being unhit after a time period
 	print("unhit")
 	
 	print(get_overlapping_areas())

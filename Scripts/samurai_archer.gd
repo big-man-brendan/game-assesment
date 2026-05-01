@@ -15,6 +15,7 @@ func _ready() -> void:
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
+	#lets the guy shoot arrows. its unused
 	
 	if !is_on_floor():
 		velocity = get_gravity()
@@ -62,6 +63,7 @@ func _on_area_entered(area: Area2D) -> void:
 
 func _on_arrow_area_entered(area: Area2D) -> void:
 	
+	#detects when a arrow hits something and moves it away
 	shooting = false
 	print("Area_entered")
 	$Arrow.position.x = 100000

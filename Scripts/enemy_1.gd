@@ -12,7 +12,14 @@ var shot = false
 signal shoot()
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
+	
+	
+	#add movement based on where the player is. if they
+	#are too far then it wont move but if they are too close
+	#then it wont move and start shooting
+	#also adds random jumping
+	
+	
 	if not is_on_floor():
 		velocity += get_gravity() * delta
 	
@@ -76,6 +83,7 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_shottimer_timeout() -> void:
+	#utilty to ensure that the program knoes when its stopped shooting
 	shot = false
 
 
@@ -84,11 +92,29 @@ func _on_bullet_1_hit() -> void:
 
 
 func _on_hurtbox_area_entered(area: Area2D) -> void:
-
+	
+	#moves the enemy away when hit because making it disapear breaks things
+	#also handles the end of the game
+	
+	
+	print(get_tree().current_scene.name)
+	
+	if get_parent().name == "Level 2":
+		
+		
+		
+		$"../CanvasLayer".show()
+		$"../CanvasLayer/Sprite2D".show()
+		$"../CanvasLayer/StartButton".show()
+		$"../CanvasLayer/QuitButton".show()
+		$"../CanvasLayer/Label".show()
+	
+	
 	position.x = 100000
 
 
 func _on_charectir_death() -> void:
+	#resets the charector when die
 	await get_tree().create_timer(2).timeout
 	print("death")
 	position = start_pos
